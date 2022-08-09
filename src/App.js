@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import Header from "./Header";
+import Students from "./Students";
+import Child from "./Child";
 
 function App() {
+  function getHeader() {
+    return alert("welcome");
+  }
+  function getName(myName) {
+    alert(myName);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Child alert={getName} />
+      <Header myFunc={getHeader} title="Bank of Pakistan" />
+      <Students
+        name="Sardar Ahmed"
+        city="Islamabad"
+        proffesion={"Web developer"}
+      />
+      <Students name="Abrar" city="Shadia" proffesion={"Web developer"} />
+      <Students
+        name="Sajid Iqbal"
+        city="Mianwali"
+        proffesion={"Web developer"}
+      />
     </div>
   );
 }
