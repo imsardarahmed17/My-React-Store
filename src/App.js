@@ -6,11 +6,15 @@ import Header from "./Header";
 import React, { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [status, setStatus] = useState(true);
 return(
-  <div>
-    <h1>Count is: {count}</h1>
-    <button onClick={() => setCount(count + 1)} >Counter</button>
+  <div className="App">
+    {
+      status ? <h1>Hello world</h1>: null
+    }
+    <br/>
+    <button onClick={()=> setStatus(!status)}>Toggle</button>
+    
     <Header/>
   </div>
 )  
